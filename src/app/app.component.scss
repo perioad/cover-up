@@ -1,0 +1,99 @@
+@import "variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  padding: 30px;
+  margin: 0 10px;
+  border-radius: $radius;
+
+  @media screen and (min-width: 486px) {
+    min-width: 400px;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-radius: $radius;
+  background-color: transparent;
+  color: $color-white;
+  cursor: pointer;
+}
+
+input::file-selector-button {
+  background-color: rgba($color-white, 0.05);
+  border-radius: $radius;
+  color: $color-white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding: 10px 15px;
+  margin-right: 25px;
+  cursor: pointer;
+  border: 2px outset $color-black;
+  will-change: background-color;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    border-style: inset;
+  }
+}
+
+button {
+  border: 2px outset $color-black;
+  border-radius: $radius;
+  padding: 20px 25px;
+  width: 100%;
+  background-color: rgba($color-white, 0.05);
+  color: $color-white;
+  font-size: 1rem;
+  transition: 0.2s;
+  will-change: background-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:active {
+    border-style: inset;
+  }
+
+  &:disabled {
+    visibility: hidden;
+  }
+}
+
+.loading-cover {
+  border-radius: $radius;
+  cursor: not-allowed;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
