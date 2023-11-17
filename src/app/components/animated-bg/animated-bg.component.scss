@@ -39,7 +39,7 @@
 .dots::after {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
   top: 0;
   left: 0;
@@ -48,7 +48,6 @@
   content: ".";
   mix-blend-mode: screen;
   animation: 44s -27s move infinite ease-in-out alternate;
-  // animation: none;
   z-index: -1;
 }
 
