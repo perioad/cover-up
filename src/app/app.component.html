@@ -1,6 +1,6 @@
 <app-animated-bg />
 
-<div class="controls">
+<main class="controls">
   <h1>Add cover art to your MP3 files</h1>
 
   <input
@@ -20,4 +20,10 @@
   <button [disabled]="!isCoverUpAllowed" (click)="coverUp()">Cover Up!</button>
 
   <app-loader *ngIf="isLoading" class="loading-cover" />
-</div>
+</main>
+
+<footer>
+  Designed and developed by
+
+  <a href="https://github.com/perioad" target="_blank">perioad</a>
+</footer>

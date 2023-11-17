@@ -24,7 +24,7 @@ h1 {
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   padding: 30px;
-  margin: 0 10px;
+  margin: auto 10px;
   border-radius: $radius;
 
   @media screen and (min-width: 486px) {
@@ -96,4 +96,10 @@ button {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+footer {
+  padding: 1rem;
+  font-size: 0.6rem;
+  text-align: center;
 }
