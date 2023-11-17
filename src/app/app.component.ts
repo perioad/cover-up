@@ -27,6 +27,8 @@ export class AppComponent {
   public audioFile: File | null = null;
   public imageFile: File | null = null;
   public isLoading = false;
+  public audioType = 'audio/mp3';
+  public imageType = 'image/*';
 
   public get isCoverUpAllowed(): boolean {
     return !!(this.audioFile && this.imageFile);
@@ -68,6 +70,14 @@ export class AppComponent {
     }
   }
 
+  public onDrop(event: DragEvent, acceptableType: string): void {
+    const fileType = event.dataTransfer?.items[0].type;
+
+    if (!fileType || !this.isFileTypeAcceptable(fileType, acceptableType)) {
+      event.preventDefault();
+    }
+  }
+
   private downloadAudio(url: string): void {
     const link = document.createElement('a');
     const timestamp = new Date().toISOString();
@@ -85,5 +95,15 @@ export class AppComponent {
     const input = event.target as HTMLInputElement;
 
     return input.files ? input.files[0] : null;
+  }
+
+  private isFileTypeAcceptable(fileType: string, acceptType: string): boolean {
+    if (acceptType === this.audioType) {
+      return fileType === 'audio/mpeg';
+    } else if (acceptType === this.imageType) {
+      return fileType.startsWith('image/');
+    }
+
+    return false;
   }
 }

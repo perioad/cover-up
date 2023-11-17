@@ -3,9 +3,19 @@
 <div class="controls">
   <h1>Add cover art to your MP3 files</h1>
 
-  <input type="file" accept="audio/mp3" (change)="onFileSelected($event)" />
+  <input
+    type="file"
+    [accept]="audioType"
+    (change)="onFileSelected($event)"
+    (drop)="onDrop($event, audioType)"
+  />
 
-  <input type="file" accept="image/*" (change)="onImageSelected($event)" />
+  <input
+    type="file"
+    [accept]="imageType"
+    (change)="onImageSelected($event)"
+    (drop)="onDrop($event, imageType)"
+  />
 
   <button [disabled]="!isCoverUpAllowed" (click)="coverUp()">Cover Up!</button>
 
