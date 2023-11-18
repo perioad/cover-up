@@ -26,3 +26,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+::selection {
+  color: $color-pink;
+}
