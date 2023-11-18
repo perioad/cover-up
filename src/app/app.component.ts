@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CoverUpService } from './services/coverup.service';
+import { CoverUpService } from './services/cover-up.service';
 import { AnimatedBgComponent } from './components/animated-bg/animated-bg.component';
 import {
   catchError,
