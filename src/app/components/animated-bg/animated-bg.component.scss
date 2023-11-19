@@ -26,7 +26,7 @@
 
 .dots {
   display: block;
-  font-size: 170px;
+  font-size: 85px;
   color: transparent;
   height: 100%;
   width: 100%;
@@ -52,13 +52,13 @@
 }
 
 .dots::before {
-  @include dots(40);
+  @include dots(30);
   animation-duration: 80s;
   animation-delay: -50s;
 }
 
 .dots::after {
-  @include dots(40);
+  @include dots(20);
   animation-duration: 60s;
   animation-delay: -80s;
 }
