@@ -11,9 +11,8 @@
 .loader {
   width: 90%;
   height: 90%;
-  box-sizing: border-box;
   display: grid;
-  filter: blur(10px) opacity(0.9);
+  filter: blur(20px) opacity(0.9);
 
   &:before,
   &:after {
