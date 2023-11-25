@@ -9,6 +9,7 @@
 }
 
 .controls {
+  position: relative;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   padding: 30px;
@@ -86,7 +87,7 @@ button {
   }
 }
 
-.loading-cover {
+.loader {
   border-radius: $radius;
   cursor: not-allowed;
   position: absolute;
