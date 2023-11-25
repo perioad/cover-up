@@ -3,71 +3,23 @@
   width: 100vw;
   height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: -9;
 }
 
-// Animation by Alison Quaglia
-
-@mixin dots($count) {
-  $text-shadow: ();
-  @for $i from 0 through $count {
-    $text-shadow: $text-shadow,
-      (-0.5+ (random()) * 2) +
-        em
-        (-0.5+ (random()) * 2) +
-        em
-        7px
-        hsla(random() * 360, 100%, 50%, 0.9);
-  }
-  text-shadow: $text-shadow;
-}
-
-.dots {
-  display: block;
-  font-size: 85px;
-  color: transparent;
-  height: 100%;
+.animated-background {
+  position: relative;
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.dots::before,
-.dots::after {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+.circle {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 3em;
-  height: 3em;
-  content: ".";
+  border-radius: 50%;
   mix-blend-mode: screen;
-  animation: 44s -27s move infinite ease-in-out alternate;
-  z-index: -1;
-}
+  filter: blur(3vw);
 
-.dots::before {
-  @include dots(30);
-  animation-duration: 80s;
-  animation-delay: -50s;
-}
-
-.dots::after {
-  @include dots(20);
-  animation-duration: 60s;
-  animation-delay: -80s;
-}
-
-@keyframes move {
-  from {
-    transform: rotate(0deg) scale(12) translateX(-20px);
-  }
-  to {
-    transform: rotate(360deg) scale(18) translateX(20px);
+  @media screen and (prefers-reduced-motion) {
+    animation-duration: 1000s !important;
   }
 }
