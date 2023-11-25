@@ -28,7 +28,7 @@ export class AppComponent {
   public imageFile: File | null = null;
   public isLoading = false;
   public audioType = 'audio/mp3';
-  public imageType = 'image/*';
+  public imageType = 'image/png, image/jpeg';
 
   public get isCoverUpAllowed(): boolean {
     return !!(this.audioFile && this.imageFile);
@@ -100,10 +100,8 @@ export class AppComponent {
   private isFileTypeAcceptable(fileType: string, acceptType: string): boolean {
     if (acceptType === this.audioType) {
       return fileType === 'audio/mpeg';
-    } else if (acceptType === this.imageType) {
-      return fileType.startsWith('image/');
     }
 
-    return false;
+    return acceptType.includes(fileType);
   }
 }
