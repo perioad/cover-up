@@ -7,6 +7,7 @@
     "serve": "http-server ./dist/coverup/browser -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "watch:prod": "ng build --watch --configuration production",
     "test": "ng test"
   },
   "private": true,
@@ -19,6 +20,7 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "@angular/service-worker": "^17.0.0",
     "browser-id3-writer": "^6.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
