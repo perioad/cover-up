@@ -70,14 +70,6 @@ export class AppComponent {
     }
   }
 
-  public onDrop(event: DragEvent, acceptableType: string): void {
-    const fileType = event.dataTransfer?.items[0].type;
-
-    if (!fileType || !this.isFileTypeAcceptable(fileType, acceptableType)) {
-      event.preventDefault();
-    }
-  }
-
   private downloadAudio(url: string): void {
     const link = document.createElement('a');
     const timestamp = new Date().toISOString();
@@ -95,13 +87,5 @@ export class AppComponent {
     const input = event.target as HTMLInputElement;
 
     return input.files ? input.files[0] : null;
-  }
-
-  private isFileTypeAcceptable(fileType: string, acceptType: string): boolean {
-    if (acceptType === this.audioType) {
-      return fileType === 'audio/mpeg';
-    }
-
-    return acceptType.includes(fileType);
   }
 }

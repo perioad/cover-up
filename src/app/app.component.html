@@ -8,7 +8,6 @@
     type="file"
     [accept]="audioType"
     (change)="onFileSelected($event)"
-    (drop)="onDrop($event, audioType)"
   />
 
   <button (click)="audoInput.click()">Choose MP3 file</button>
@@ -26,7 +25,6 @@
     type="file"
     [accept]="imageType"
     (change)="onImageSelected($event)"
-    (drop)="onDrop($event, imageType)"
   />
 
   <button (click)="imageInput.click()">Choose image</button>
