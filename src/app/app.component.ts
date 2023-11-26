@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CoverUpService } from './services/cover-up.service';
 import { AnimatedBgComponent } from './components/animated-bg/animated-bg.component';
 import {
+  Subject,
   catchError,
   combineLatest,
   finalize,
@@ -23,12 +24,14 @@ import { LoaderComponent } from './components/loader/loader.component';
 export class AppComponent {
   private coverUpService = inject(CoverUpService);
   private minLoadingTime = 1000;
+  private _ariaMessage$ = new Subject<string>();
 
   public audioFile: File | null = null;
   public imageFile: File | null = null;
   public isLoading = false;
   public audioType = 'audio/mp3';
   public imageType = 'image/png, image/jpeg';
+  public ariaMessage$ = this._ariaMessage$.asObservable();
 
   public get isCoverUpAllowed(): boolean {
     return !!(this.audioFile && this.imageFile);
@@ -45,6 +48,7 @@ export class AppComponent {
   public coverUp(): void {
     if (this.audioFile && this.imageFile) {
       this.isLoading = true;
+      this.ariaAnnounce('The process has started');
 
       combineLatest([
         this.coverUpService.addImageToMp3$(this.audioFile, this.imageFile),
@@ -55,6 +59,9 @@ export class AppComponent {
           map((emittion) => emittion[0]),
           catchError((error) => {
             console.error('Error processing files:', error);
+            this.ariaAnnounce(
+              'Something went wrong, the process has failed. Sorry'
+            );
 
             return of(null);
           }),
@@ -66,6 +73,7 @@ export class AppComponent {
           if (!url) return;
 
           this.downloadAudio(url);
+          this.ariaAnnounce('The process has finished successfully');
         });
     }
   }
@@ -87,5 +95,9 @@ export class AppComponent {
     const input = event.target as HTMLInputElement;
 
     return input.files ? input.files[0] : null;
+  }
+
+  private ariaAnnounce(message: string): void {
+    this._ariaMessage$.next(message);
   }
 }

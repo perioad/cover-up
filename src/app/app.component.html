@@ -10,7 +10,9 @@
     (change)="onFileSelected($event)"
   />
 
-  <button (click)="audoInput.click()">Choose MP3 file</button>
+  <button title="Supported audio format: MP3" (click)="audoInput.click()">
+    Choose audio
+  </button>
 
   @if (audioFile?.name) {
 
@@ -27,7 +29,12 @@
     (change)="onImageSelected($event)"
   />
 
-  <button (click)="imageInput.click()">Choose image</button>
+  <button
+    title="Supported image formats: jpg, jpeg, png"
+    (click)="imageInput.click()"
+  >
+    Choose image
+  </button>
 
   @if (imageFile?.name) {
 
@@ -37,7 +44,12 @@
 
   }
 
-  <button class="coverup" [disabled]="!isCoverUpAllowed" (click)="coverUp()">
+  <button
+    class="coverup"
+    title="Press to add the image to the audio file"
+    [disabled]="!isCoverUpAllowed"
+    (click)="coverUp()"
+  >
     Cover Up!
   </button>
 
@@ -49,3 +61,7 @@
 
   <a href="https://github.com/perioad" target="_blank">perioad</a>
 </footer>
+
+<div class="aria" aria-live="assertive">
+  {{ ariaMessage$ | async }}
+</div>
