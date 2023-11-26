@@ -4,20 +4,44 @@
   <h1>Add cover art to your MP3 file</h1>
 
   <input
+    #audoInput
     type="file"
     [accept]="audioType"
     (change)="onFileSelected($event)"
     (drop)="onDrop($event, audioType)"
   />
 
+  <button (click)="audoInput.click()">Choose MP3 file</button>
+
+  @if (audioFile?.name) {
+
+  <p class="filename" [title]="audioFile?.name">
+    {{ audioFile?.name }}
+  </p>
+
+  }
+
   <input
+    #imageInput
     type="file"
     [accept]="imageType"
     (change)="onImageSelected($event)"
     (drop)="onDrop($event, imageType)"
   />
 
-  <button [disabled]="!isCoverUpAllowed" (click)="coverUp()">Cover Up!</button>
+  <button (click)="imageInput.click()">Choose image</button>
+
+  @if (imageFile?.name) {
+
+  <p class="filename" [title]="imageFile?.name">
+    {{ imageFile?.name }}
+  </p>
+
+  }
+
+  <button class="coverup" [disabled]="!isCoverUpAllowed" (click)="coverUp()">
+    Cover Up!
+  </button>
 
   <app-loader *ngIf="isLoading" class="loader" />
 </main>
