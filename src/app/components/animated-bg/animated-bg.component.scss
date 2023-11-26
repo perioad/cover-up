@@ -1,7 +1,7 @@
 :host {
   display: block;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   z-index: -9;
 }
@@ -9,7 +9,7 @@
 .animated-background {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
