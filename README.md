@@ -7,7 +7,7 @@
 ## Lighthouse CI Score
 
 <!-- lhci badges start -->
-![PERFORMANCE](https://img.shields.io/badge/PERFORMANCE-84-red.svg) ![ACCESSIBILITY](https://img.shields.io/badge/ACCESSIBILITY-100-green.svg) ![BEST_PRACTICES](https://img.shields.io/badge/BEST_PRACTICES-100-green.svg) ![SEO](https://img.shields.io/badge/SEO-100-green.svg) ![PWA](https://img.shields.io/badge/PWA-100-green.svg)
+![PERFORMANCE](https://img.shields.io/badge/PERFORMANCE-98-green.svg) ![ACCESSIBILITY](https://img.shields.io/badge/ACCESSIBILITY-100-green.svg) ![BEST_PRACTICES](https://img.shields.io/badge/BEST_PRACTICES-100-green.svg) ![SEO](https://img.shields.io/badge/SEO-100-green.svg) ![PWA](https://img.shields.io/badge/PWA-100-green.svg)
 <!-- lhci badges end -->
 
 ## Development server
