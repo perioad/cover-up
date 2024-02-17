@@ -1,0 +1,30 @@
+name: Lighthouse CI
+on: [push]
+jobs:
+  lhci:
+    name: Run Lighthouse
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: npm install, build
+        run: |
+          npm install
+          npm run build
+      - name: run Lighthouse CI
+        run: |
+          npm run lhci
+      - name: Update badges
+        run: node ./lhci/update-badges.mjs
+      - name: Commit updated README
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add README.md
+          git commit -m "update README with lhci badges [skip actions]"
+          git push

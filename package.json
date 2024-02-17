@@ -8,7 +8,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "watch:prod": "ng build --watch --configuration production",
-    "test": "ng test"
+    "test": "ng test",
+    "lhci": "lhci autorun"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +31,7 @@
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
+    "@lhci/cli": "^0.13.0",
     "@types/jasmine": "~5.1.0",
     "http-server": "^14.1.1",
     "jasmine-core": "~5.1.0",
