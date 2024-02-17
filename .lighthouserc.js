@@ -4,7 +4,7 @@ module.exports = {
       staticDistDir: "./dist/coverup/browser",
     },
     upload: {
-      target: "temporary-public-storage",
+      target: "filesystem",
     },
   },
 };
