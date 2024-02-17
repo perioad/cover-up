@@ -1,14 +1,16 @@
 # Coverup
 
-## Lighthouse CI Score
-
-<!-- lhci badges start -->
-![PERFORMANCE](https://img.shields.io/badge/PERFORMANCE-97-red.svg) ![ACCESSIBILITY](https://img.shields.io/badge/ACCESSIBILITY-100-green.svg) ![BEST_PRACTICES](https://img.shields.io/badge/BEST_PRACTICES-100-green.svg) ![SEO](https://img.shields.io/badge/SEO-100-green.svg) ![PWA](https://img.shields.io/badge/PWA-100-green.svg)
-<!-- lhci badges end -->
-
 [<kbd> <br> https://coverup.studio <br> </kbd>](https://coverup.studio)
 
 ![coverup-preview](https://github.com/perioad/coverup/assets/45464847/6f86f0fb-69da-41e1-89d1-55126a70551c)
+
+## Lighthouse CI Score
+
+<!-- lhci badges start -->
+
+![PERFORMANCE](https://img.shields.io/badge/PERFORMANCE-97-red.svg) ![ACCESSIBILITY](https://img.shields.io/badge/ACCESSIBILITY-100-green.svg) ![BEST_PRACTICES](https://img.shields.io/badge/BEST_PRACTICES-100-green.svg) ![SEO](https://img.shields.io/badge/SEO-100-green.svg) ![PWA](https://img.shields.io/badge/PWA-100-green.svg)
+
+<!-- lhci badges end -->
 
 ## Development server
 
